@@ -64,3 +64,19 @@ The resolver does not write to the target process's memory.
 ## Status
 
 Working proof of concept validated on Windows 8.1 x64. Additional testing and contributions are welcome.
+
+## Problem this solves
+
+How can a program obtain the full path of a picture already open in
+Windows Photo Viewer when the window title only shows the filename?
+
+Traditional methods such as reading the window title, inspecting command-line
+arguments, or enumerating open file handles may not reveal the original image
+path.
+
+This resolver locates candidate PIDLs in the viewer process memory and asks
+Windows Shell to translate them into absolute filesystem paths.
+
+Relevant search terms: Windows Photo Viewer get full image path, Windows
+Picture and Fax Viewer file path, Photo_Lightweight_Viewer, recover image
+filename and directory, SHGetPathFromIDListW, Windows 8.1 C#.
